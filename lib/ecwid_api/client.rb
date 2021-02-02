@@ -36,7 +36,6 @@ module EcwidApi
         conn.request  :json
 
         conn.response :json, content_type: /\bjson$/
-        conn.response :logger, nil, { bodies: false, log_level: :error }
         conn.response :logger do | logger |
           def logger.debug *args; end
           def logger.info *args; end
